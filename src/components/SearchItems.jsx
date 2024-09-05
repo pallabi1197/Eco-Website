@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { items } from "./Data";
+import Product from "./Product";
 
 const SearchItems = () => {
   const [filterData, setfilterData] = useState([]);
@@ -12,13 +13,18 @@ const SearchItems = () => {
         p.title.toLowerCase().includes(term.toLowerCase())
       );
 
-      console.log(data);
+      setfilterData(data);
     };
 
     filteredProduct();
   }, [term]);
 
-  return <div>SearchItems - {term}</div>;
+  return (
+
+    <Product items = {filterData} />
+
+
+  );
 };
 
 export default SearchItems;
