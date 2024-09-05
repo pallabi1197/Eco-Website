@@ -1,0 +1,13 @@
+React Shopping Cart Eco-Website - 30 Aug 2024
+1 React SetUp with Vite
+2 UI Design
+3 Router Setup
+4 Product Detail Page
+5 Related Product Suggestions
+6 Filter Product
+7 Search Product
+8 Add to Cart
+9 Adding React Toastify
+10 Conditional Rendering in Cart
+11 Adding React Icons
+12 Deploy to Vercel
