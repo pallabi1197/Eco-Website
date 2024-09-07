@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { items } from "./Data";
+import { BsCartCheckFill } from "react-icons/bs";
 
-const Navbar = ({ setData }) => {
+
+const Navbar = ({ setData, cart }) => {
+  const location = useLocation();  
   const [searchTerm, setsearchTerm] = useState("");
   const navigate = useNavigate();
 
@@ -42,11 +45,19 @@ const Navbar = ({ setData }) => {
           </form>
 
           <Link to={"/cart"} className="cart">
-            Cart
+          <button type="button" className="btn btn-primary position-relative">
+ <BsCartCheckFill style={{fontSize:'1.5rem'}} />
+  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+  {cart.length}
+    <span className="visually-hidden">unread messages</span>
+  </span>
+</button>
           </Link>
         </div>
 
-        <div className="nav-bar-wrapper">
+          {location.pathname== '/' && (
+
+<div className="nav-bar-wrapper">
           <div className="items">Filter By {"->"}</div>
           <div className="items" onClick={() => setData(items)}>
             No Filter
@@ -73,6 +84,11 @@ const Navbar = ({ setData }) => {
             {">="}89999
           </div>
         </div>
+
+          ) }
+
+
+        
       </header>
     </>
   );
