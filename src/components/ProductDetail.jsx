@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import { items } from "./Data";
 import Product from "./Product";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const ProductDetail = ({ cart, setCart }) => {
+const ProductDetail = ({ items, cart, setCart }) => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [relatedProducts, setrelatedProducts] = useState([]);

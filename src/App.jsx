@@ -21,7 +21,7 @@ function App() {
         <Navbar cart = {cart} setData={setData}/>
         <Routes>
           <Route path="/" element={<Product items={data} cart={cart} setCart={setCart}/>} />
-          <Route path="/product/:id" element={<ProductDetail cart={cart} setCart={setCart} />} />
+          <Route path="/product/:id" element={<ProductDetail items={data} cart={cart} setCart={setCart} />} />
           <Route path="/search/:term" element={<SearchItems cart={cart} setCart={setCart} />} />
           <Route path="/cart" element={<Cart cart={cart} setCart={setCart}/>} />
         </Routes>
